@@ -1,0 +1,23 @@
+﻿@model IEnumerable<WebApi.Models.PhotoAlbum>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-3">
+            <div class="card" >
+                <div class="card-body">
+                    <img src="@item.urls["small"]" alt="@item.alt_description" class="card-img-top" />
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="@item.id" class="glyphicon glyphicon-thumbs-up">@item.likes</a>
+                </div>
+            </div>
+        </div>
+
+
+    }
+</div>
